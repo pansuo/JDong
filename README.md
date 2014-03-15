@@ -5,7 +5,7 @@ JDong
 ###使用
 - 修改config.py, 按提示设置
 - python main.py reg 	# 自动注册
-- python main.py set 3 0 100	# 添加购物车并改地址, 3个线程, 从0到100个帐号
+- python main.py set 3 0 100	# 添加购物车并改地址, 3个线程, 从0到100个帐号 (正在整理,不可用)
 
 ###安装
 - 运行环境, python2.7, win7
