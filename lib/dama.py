@@ -4,17 +4,21 @@ import requests
 import json
 import random
 import binascii
-
+from config import config
 
 class Dama2():
 	"""打码兔打码."""
-
+	_username = ''
+	_password = ''
 	__attrs__ = ['DM', 'username', 'password', 'softuuid', 'timeout']
 
 	def __init__(self):
 		self.DM = WinDLL('lib/CrackCaptchaAPI.dll')
-		self.username = c_char_p(self.username)
-		self.password = c_char_p(self.password)
+		if not self._username:
+			Dama2._username = config['dama']['dama2']['username']
+			Dama2._password = config['dama']['dama2']['password']
+		self.username = c_char_p(self._username)
+		self.password = c_char_p(self._password)
 		self.softuuid = c_char_p('6fbc06efdc777eee854842572102daec')
 		self.timeout = c_ushort(30)
 
@@ -34,9 +38,15 @@ class Dama2():
 
 
 class Chaoren():
+	_username = ''
+	_password = ''
 	__attrs__ = ['DM', 'username', 'password', 'softuuid', 'timeout']
 
 	def __init__(self):
+		if not self._username:
+			Chaoren._username = config['dama']['chaoren']['username']
+			Chaoren._password = config['dama']['chaoren']['password']
+
 		self.s = requests.Session()
 		self.s.encoding = 'utf-8'
 		self.s.timeout = 16
