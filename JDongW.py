@@ -12,6 +12,7 @@ import threading
 import logging
 from pyquery import PyQuery
 from lib.dama import Dama
+from lib.mysession import MySession
 from config import config
 
 

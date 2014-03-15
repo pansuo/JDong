@@ -89,9 +89,9 @@ class Dama():
 	flag = 'dama2'
 
 	def __init__(self):
-		if flag == 'dama2':
+		if self.flag == 'dama2':
 			self.w = Dama2()
-		elif flag == 'chaoren':
+		elif self.flag == 'chaoren':
 			self.w = Chaoren()
 		else:
 			self.w = Dama2()		# 默认
