@@ -98,6 +98,7 @@ class JDongW():
 			with file('res/users.txt', 'a') as f:
 				f.write(self.username + "---" + self.password + '\r\n')
 
+			print "[success][reg]" + self.username
 			self.__setSession()
 			return True
 
