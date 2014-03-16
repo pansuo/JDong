@@ -7,7 +7,9 @@ import random
 import Queue
 import logging
 from JDongW import JDongW
+from JDongM import JDongM
 from worker import Worker
+from config import config
 
 
 def reg():
@@ -20,6 +22,7 @@ def reg():
 
 def set_address(thread_num, queue):
 	"""添加购物车 & 改收货地址"""
+	JDongM.item = config['item']
 	Worker.action = 'set'
 	Worker.queue = queue
 
