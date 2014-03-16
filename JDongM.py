@@ -241,7 +241,6 @@ class JDongM():
 
 	""" 旧,待更新
 	def buy(self):
-		"""普通下单"""
 		data = {
 			'order.idShipmentType': '65',
 			'order.idInvoiceHeaderType': '4',
