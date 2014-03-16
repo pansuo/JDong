@@ -13,7 +13,7 @@ from lib.mysession import MySession
 from lib.dama import Dama
 
 
-class JDong():
+class JDongM():
 	"""jdong触屏版"""
 	item = '1056969'
 
@@ -110,7 +110,7 @@ class JDong():
 					print "[JDongM][login][9]login failed"
 				raise
 		except:
-			logging.debug(r'login error, returned \n %s' % s)
+			logging.debug(r'login error, returned \n %s' % r.text)
 			return self.login(retries - 1)
 
 		self.__setSession()
@@ -239,6 +239,7 @@ class JDong():
 
 		return True
 
+	""" 旧,待更新
 	def buy(self):
 		"""普通下单"""
 		data = {
@@ -258,3 +259,15 @@ class JDong():
 				return False
 		except:
 			return False
+	"""
+
+
+if __name__ == '__main__':
+	logging.basicConfig(filename='info.log', format=u'[%(asctime)s][%(levelname)8s] --- %(message)s (%(filename)s:%(lineno)s)', level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S')
+	w = JDongM('tiancheng02', 'tian1991')
+	if not w.login():
+		print "login error"
+	elif not w.clearCart():
+		print "clearCart error"
+	elif not w.add2cart():
+		print 'add2cart error'
